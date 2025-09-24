@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Développement de site web</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="page">
+      <!-- Barre supérieure / onglet -->
+     
+
+      <!-- Titre principal -->
+      <h1 class="title">Développement de site web</h1>
+
+      <!-- Contenu principal en deux colonnes -->
+      <main class="content">
+        <!-- Colonne gauche -->
+        <section class="left">
+          <div class="wizard-illustration" role="img" aria-label="Illustration d'un magicien">
+            <!-- Image du professeur magicien -->
+            <img src="professeur.png" alt="Professeur magicien" style="max-width: 100%; max-height: 100%; object-fit: contain;"/>
+          </div>
+          <div class="btns">
+            <button class="btn play" type="button" id="btnPlay" aria-pressed="false">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              <span>Play</span>
+            </button>
+            <button class="btn pause" type="button" id="btnPause" aria-pressed="false">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+              <span>Pause</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Colonne droite -->
+        <aside class="right">
+          <h2 class="tools-title">La liste des outils physiques et logiciels</h2>
+          <div class="tools-and-table">
+            <ul class="tools-list">
+              <li>Ordinateur</li>
+              <li>Navigateur web (Chrome)</li>
+              <li>Serveur local (XAMP -&gt; Apache)</li>
+              <li>Terminal Shell (Linux ou WSL)</li>
+              <li>SGBDR (XAMP -&gt; MySQL)</li>
+              <li>Editeur de texte (Visual Studio)</li>
+            </ul>
+
+            <table class="courses-table" aria-label="Liste des cours et ECTS">
+              <thead>
+                <tr>
+                  <th>Cours</th>
+                  <th>Enseignant</th>
+                  <th>ECTS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>HTML5/CSS</td>
+                  <td>A. Rojbi</td>
+                  <td class="cell-ects orange" rowspan="3">8</td>
+                </tr>
+                <tr>
+                  <td>PHP</td>
+                  <td>Y. Fadlaoui</td>
+                </tr>
+                <tr>
+                  <td>BD</td>
+                  <td>Y. Fadlaoui</td>
+                </tr>
+                <tr>
+                  <td>Système</td>
+                  <td>I. Truck</td>
+                  <td class="cell-ects blue" rowspan="3">8</td>
+                </tr>
+                <tr>
+                  <td>Algorithmie</td>
+                  <td>C. Jost</td>
+                </tr>
+                <tr>
+                  <td>POO</td>
+                  <td>C. Jost</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <a class="below-table" href="https://handiman.univ-paris8.fr/planningM1-25-26.php">Cette phrase est un lien vers les emplois du temps.</a>
+        </aside>
+
+        <!-- Formulaire d'inscription intégré dans content -->
+        <section class="form-section">
+          <form class="form" action="#" method="post">
+            <div class="form-fields">
+              <div class="form-field">
+                <label class="label" for="identifiant">Identifiant</label>
+                <input class="input" type="text" id="identifiant" name="identifiant" placeholder="Votre identifiant" />
+              </div>
+              <div class="form-field">
+                <label class="label" for="password">Mot de passe</label>
+                <input class="input" type="password" id="password" name="password" placeholder="Votre mot de passe" />
+              </div>
+            </div>
+            <button class="btn-submit" type="submit">Inscription</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      // Toggle visuel pour Play / Pause
+      const btnPlay = document.getElementById('btnPlay');
+      const btnPause = document.getElementById('btnPause');
+      btnPlay.addEventListener('click', () => {
+        btnPlay.classList.toggle('active');
+        btnPlay.setAttribute('aria-pressed', btnPlay.classList.contains('active'));
+      });
+      btnPause.addEventListener('click', () => {
+        btnPause.classList.toggle('active');
+        btnPause.setAttribute('aria-pressed', btnPause.classList.contains('active'));
+      });
+    </script>
+  </body>
+</html>
